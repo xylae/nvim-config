@@ -2,6 +2,12 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		local lspconfig = require("lspconfig")
-		lspconfig.clangd.setup({})
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+        capabilities.textDocument.completion.completionItem.snippetSupport = false
+
+		lspconfig.clangd.setup({
+            capabilities = capabilities,
+        })
 	end,
 }
