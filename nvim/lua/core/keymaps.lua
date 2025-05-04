@@ -15,10 +15,12 @@ vim.g.maplocalleader = ""
 vim.g.mapleader = " "
 
 -- insert / append
-map("n", "k", "i", opts)
-map("n", "K", "I", opts)
-map("n", "l", "a", opts)
-map("n", "L", "A", opts)
+map({"n", "v"}, "k", "i", opts)
+map({"n", "v"}, "K", "I", opts)
+map({"n", "v"}, "l", "a", opts)
+map({"n", "v"}, "L", "A", opts)
+map({"n", "v"}, "i", "<Nop>", opts)
+map({"n", "v"}, "I", "<Nop>", opts)
 
 -- movement keys
 map({"n", "v", "o"}, "w", "k", opts)
