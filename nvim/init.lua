@@ -7,5 +7,5 @@ require("core.keymaps")
 -- bootstrap plugin manager
 require("core.lazy")
 
--- set colorscheme
-vim.cmd.colorscheme("lackluster")
+-- light mode
+vim.o.background = "light"
