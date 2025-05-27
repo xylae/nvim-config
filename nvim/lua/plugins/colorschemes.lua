@@ -9,8 +9,15 @@ return {
         --         }
         --     })
         -- end,
+        -- init = function()
+        --     vim.cmd.colorscheme("lackluster")
+        -- end,
+    },
+    {
+        "Verf/deepwhite.nvim",
+        priority = 1000,
         init = function()
-            vim.cmd.colorscheme("lackluster")
+            vim.cmd.colorscheme("deepwhite")
         end,
-    }
+    },
 }
