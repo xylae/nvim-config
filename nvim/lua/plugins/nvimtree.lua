@@ -26,6 +26,8 @@ local function my_on_attach(bufnr)
     del("E")
     del("W")
     del("R")
+    del("[e")
+    del("]e")
 
     map("x", api.fs.remove, "delete")
     map("X", api.fs.trash, "trash")
@@ -36,6 +38,8 @@ local function my_on_attach(bufnr)
     map("n", api.fs.create, "new file or directory")
     map("S", api.node.navigate.sibling.last, "last sibling")
     map("W", api.node.navigate.sibling.first, "first sibling")
+    map("[d", api.node.navigate.diagnostics.prev, "previous diagnostic")
+    map("]d", api.node.navigate.diagnostics.next, "next diagnostic")
 
     -- commands
     map("<leader>e", ":NvimTreeToggle<CR>", "open and focus tree")
