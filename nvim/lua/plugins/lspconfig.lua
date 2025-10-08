@@ -1,18 +1,17 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- Disable snippet support if you don’t want snippet completions
-		capabilities.textDocument.completion.completionItem.snippetSupport = false
+        capabilities.textDocument.completion.completionItem.snippetSupport = false
 
-		-- Use the new vim.lsp.config API (Neovim 0.10+)
-		vim.lsp.config["clangd"] = {
-			cmd = { "clangd" },
-			capabilities = capabilities,
-		}
+        vim.lsp.config('clangd', {
+          cmd = { 'clangd' },
+          capabilities = capabilities,
+          root_markers = { ".clangd", "compile_flags.txt", "compile_commands.json" },
+          filetypes = { 'c' },
+        })
 
-		-- Start or attach clangd automatically to matching buffers
-		vim.lsp.start(vim.lsp.config["clangd"])
+        vim.lsp.enable('clangd')
 	end,
 }
