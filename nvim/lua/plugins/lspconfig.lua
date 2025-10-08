@@ -8,8 +8,6 @@ return {
         vim.lsp.config('clangd', {
           cmd = { 'clangd' },
           capabilities = capabilities,
-          root_markers = { ".clangd", "compile_flags.txt", "compile_commands.json" },
-          filetypes = { 'c' },
         })
 
         vim.lsp.enable('clangd')
